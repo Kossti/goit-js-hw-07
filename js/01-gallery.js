@@ -1,7 +1,5 @@
 import { galleryItems } from "./gallery-items.js";
 
-console.log(galleryItems);
-
 const galerryContainer = document.querySelector(".gallery");
 const galleryMarkup = createGaleryImageMarkup(galleryItems);
 
@@ -13,12 +11,12 @@ function createGaleryImageMarkup(galleryItems) {
     .map(({ preview, original, description }) => {
       return `
         <li class="gallery__item" >
-        <a class="gallery__link" href=${original}">
+        <a class="gallery__link" href="${original}">
                 <img
                     class="gallery__image"
-                    src=${preview}
-                    data-source=${original}
-                    alt=${description}
+                    src="${preview}"
+                    data-source="${original}"
+                    alt="${description}"
                 />
         </a>
         </li >
@@ -32,7 +30,6 @@ function showImageOnClick(evt) {
 
   const isGalleryItemEl = evt.target.classList.contains("gallery__image");
   if (!isGalleryItemEl) return;
-  console.log(evt.target.dataset.source);
   showModal(evt);
 }
 
